@@ -4,6 +4,57 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Flame, Maximize2, ChefHat, Calendar, Mail, Phone, User, Send, Check, Menu, X } from "lucide-react";
 import { kitchens } from "./data/kitchens";
+
+const VideoPlayer = ({ src }: { src: string }) => {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Su mobile riproduciamo automaticamente quando entra nello schermo
+            if (window.innerWidth < 1024) {
+              videoRef.current?.play().catch(() => {});
+            }
+          } else {
+            if (window.innerWidth < 1024) {
+              videoRef.current?.pause();
+              if (videoRef.current) videoRef.current.currentTime = 0;
+            }
+          }
+        });
+      },
+      { threshold: 0.5 } // Avvia il video quando è visibile al 50%
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      className="w-full h-full object-cover"
+      muted
+      loop
+      playsInline
+      onMouseOver={(e) => {
+        if (window.innerWidth >= 1024) e.currentTarget.play().catch(() => {});
+      }}
+      onMouseOut={(e) => {
+        if (window.innerWidth >= 1024) {
+          e.currentTarget.pause();
+          e.currentTarget.currentTime = 0;
+        }
+      }}
+    />
+  );
+};
+
 export default function Home() {
   const [formData, setFormData] = useState({
     name: "",
@@ -45,7 +96,7 @@ export default function Home() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
             <a href="#catalog" className="hover:text-[#ad9271] transition-colors">Rinnovo Esposizione</a>
-            <a href="#about" className="hover:text-[#ad9271] transition-colors">L&apos;Esposizione</a>
+            <a href="#catalog" className="hover:text-[#ad9271] transition-colors">L&apos;Esposizione</a>
             <a href="#contact" className="hover:text-[#ad9271] transition-colors">Prenota Visita</a>
           </nav>
           
@@ -78,7 +129,7 @@ export default function Home() {
               Rinnovo Esposizione
             </a>
             <a 
-              href="#about" 
+              href="#catalog" 
               className="text-[#0e1f2b] font-medium py-2 border-b border-slate-100"
               onClick={() => setIsMobileMenuOpen(false)}
             >
@@ -155,7 +206,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
                   <div className="aspect-[4/3] sm:aspect-video w-full bg-slate-200 rounded-lg overflow-hidden relative shadow-inner">
-                    <img src="/immagini/Showroom.jpg" alt="Il nostro Showroom" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                    <img src="/Immagini/Showroom.jpg" alt="Il nostro Showroom" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                   </div>
                   <div className="mt-6 flex justify-around text-center text-slate-600 text-sm">
                     <div>
@@ -196,19 +247,7 @@ export default function Home() {
                   viewport={{ once: true, margin: "-100px" }}
                 >
                   <div className="aspect-[2/3] w-full bg-slate-100 relative overflow-hidden rounded-t-2xl">
-                    <video 
-                      src={kitchen.videoSrc} 
-                      className="w-full h-full object-cover"
-                      muted 
-                      loop 
-                      playsInline
-                      onMouseOver={(e) => (e.target as HTMLVideoElement).play()}
-                      onMouseOut={(e) => {
-                        const v = e.target as HTMLVideoElement;
-                        v.pause();
-                        v.currentTime = 0;
-                      }}
-                    />
+                    <VideoPlayer src={kitchen.videoSrc} />
                     <div className="absolute top-4 right-4 bg-[#ad9271] text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                       -50%
                     </div>
@@ -268,7 +307,7 @@ export default function Home() {
         </section>
 
         {/* Contact Form Section */}
-        <section id="contact" className="relative py-24 border-t border-[#ad9271]/20 bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/immagini/showroom2.jpg')" }}>
+        <section id="contact" className="relative py-24 border-t border-[#ad9271]/20 bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/Immagini/showroom2.jpg')" }}>
           <div className="absolute inset-0 bg-[#0e1f2b]/80 backdrop-blur-[2px]"></div>
           <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-white/20">
