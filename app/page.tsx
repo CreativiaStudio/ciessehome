@@ -421,7 +421,7 @@ export default function Home() {
                       type="submit"
                       className="w-full bg-[#ad9271] hover:bg-[#967d5f] text-white font-bold py-4 px-6 rounded-lg shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2 cursor-pointer text-lg uppercase tracking-wide"
                     >
-                      Richiedi Coupon e Blocca Cucine
+                      Blocca i Regali e la Cucina
                     </button>
                   </form>
                 )}
