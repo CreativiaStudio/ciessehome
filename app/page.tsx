@@ -111,7 +111,7 @@ export default function Home() {
 
     // 2. Invia al Webhook di N8N (Server-Side Meta CAPI)
     try {
-      await fetch("https://n8n.creativiastudio.com/webhook-test/47ff0a28-48b5-427e-8173-5e932468dfb3", {
+      await fetch("https://n8n.creativiastudio.com/webhook/47ff0a28-48b5-427e-8173-5e932468dfb3", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
