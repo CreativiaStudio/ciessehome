@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Flame, Maximize2, ChefHat, Calendar, Mail, Phone, User, Send, Check, Menu, X } from "lucide-react";
+import { Flame, Maximize2, ChefHat, Calendar, Mail, Phone, User, Send, Check, Menu, X, Play } from "lucide-react";
 import { kitchens } from "./data/kitchens";
 
 const VideoPlayer = ({ src }: { src: string }) => {
@@ -13,19 +13,20 @@ const VideoPlayer = ({ src }: { src: string }) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Su mobile riproduciamo automaticamente quando entra nello schermo
+            // Su mobile riproduciamo automaticamente
             if (window.innerWidth < 1024) {
               videoRef.current?.play().catch(() => {});
             }
           } else {
             if (window.innerWidth < 1024) {
               videoRef.current?.pause();
-              if (videoRef.current) videoRef.current.currentTime = 0;
+              // Quando esce, lo riportiamo a 3 secondi (il frame figo)
+              if (videoRef.current) videoRef.current.currentTime = 3.0;
             }
           }
         });
       },
-      { threshold: 0.5 } // Avvia il video quando è visibile al 50%
+      { threshold: 0.5 }
     );
 
     if (videoRef.current) {
@@ -35,23 +36,38 @@ const VideoPlayer = ({ src }: { src: string }) => {
   }, []);
 
   return (
-    <video
-      ref={videoRef}
-      src={src}
-      className="w-full h-full object-cover"
-      muted
-      loop
-      playsInline
-      onMouseOver={(e) => {
-        if (window.innerWidth >= 1024) e.currentTarget.play().catch(() => {});
-      }}
-      onMouseOut={(e) => {
-        if (window.innerWidth >= 1024) {
-          e.currentTarget.pause();
-          e.currentTarget.currentTime = 0;
-        }
-      }}
-    />
+    <div className="relative w-full h-full group">
+      <video
+        ref={videoRef}
+        src={`${src}#t=3.0`}
+        preload="metadata"
+        className="w-full h-full object-cover"
+        muted
+        loop
+        playsInline
+        onMouseOver={(e) => {
+          // Su desktop, quando entra l'hover facciamo ripartire il video da 0
+          if (window.innerWidth >= 1024) {
+            e.currentTarget.currentTime = 0;
+            e.currentTarget.play().catch(() => {});
+          }
+        }}
+        onMouseOut={(e) => {
+          // Quando esce l'hover su desktop, mettiamo in pausa e torniamo al frame a 3s
+          if (window.innerWidth >= 1024) {
+            e.currentTarget.pause();
+            e.currentTarget.currentTime = 3.0;
+          }
+        }}
+      />
+      
+      {/* Icona Play centrale: visibile solo su desktop e nascosta al passaggio del mouse */}
+      <div className="absolute inset-0 hidden lg:flex items-center justify-center pointer-events-none transition-opacity duration-300 group-hover:opacity-0">
+        <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 shadow-[0_0_20px_rgba(0,0,0,0.1)]">
+          <Play className="w-6 h-6 text-white ml-1 drop-shadow-md" fill="currentColor" />
+        </div>
+      </div>
+    </div>
   );
 };
 
