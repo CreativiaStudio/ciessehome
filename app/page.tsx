@@ -106,8 +106,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center">
             <img src="/Loghi/logo-04.png" alt="Ciesse Home" className="h-6 w-auto" />
-            <span className="ml-3 hidden sm:inline-block text-xs bg-[#ad9271]/20 text-[#ad9271] px-2 py-0.5 rounded-full font-medium tracking-wide">
-              OUTLET
+            <span className="ml-3 hidden sm:inline-block text-xs bg-[#ad9271]/20 text-[#ad9271] px-2 py-0.5 rounded-full font-bold tracking-wide uppercase">
+              Rinnovo Showroom
             </span>
           </div>
           
