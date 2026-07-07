@@ -77,7 +77,8 @@ export default function Home() {
     email: "",
     phone: "",
     kitchenId: "",
-    notes: ""
+    notes: "",
+    privacyAccepted: false
   });
   const [submitted, setSubmitted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -417,9 +418,23 @@ export default function Home() {
                         placeholder="Dicci quando preferisci venire a trovarci o quali sono le tue richieste..."
                       ></textarea>
                     </div>
+                    <div>
+                      <label className="flex items-start gap-3 cursor-pointer p-2 hover:bg-slate-50 rounded-lg transition-colors border border-transparent hover:border-slate-100">
+                        <input
+                          type="checkbox"
+                          required
+                          checked={formData.privacyAccepted}
+                          onChange={(e) => setFormData({ ...formData, privacyAccepted: e.target.checked })}
+                          className="mt-0.5 w-5 h-5 text-[#ad9271] focus:ring-[#ad9271] border-slate-300 rounded cursor-pointer accent-[#ad9271]"
+                        />
+                        <span className="text-sm text-slate-600 leading-snug">
+                          Ho letto e accetto la <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-[#ad9271] font-semibold hover:underline">Privacy Policy</a>. Acconsento al trattamento dei miei dati personali per gestire la richiesta.
+                        </span>
+                      </label>
+                    </div>
                     <button
                       type="submit"
-                      className="w-full bg-[#ad9271] hover:bg-[#967d5f] text-white font-bold py-4 px-6 rounded-lg shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2 cursor-pointer text-lg uppercase tracking-wide"
+                      className="w-full bg-[#ad9271] hover:bg-[#967d5f] text-white font-bold py-4 px-6 rounded-lg shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2 cursor-pointer text-lg uppercase tracking-wide mt-2"
                     >
                       Blocca i Regali e la Cucina
                     </button>
