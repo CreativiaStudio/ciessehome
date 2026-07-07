@@ -127,7 +127,10 @@ export default function Home() {
           },
           custom_data: {
             kitchen_id: formData.kitchenId,
-            notes: formData.notes
+            notes: formData.notes,
+            utm_source: new URLSearchParams(window.location.search).get('utm_source') || "",
+            utm_medium: new URLSearchParams(window.location.search).get('utm_medium') || "",
+            utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || "Nessuna / Organico"
           }
         })
       });
