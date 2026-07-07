@@ -205,12 +205,17 @@ export default function Home() {
                 <p className="mt-4 text-base text-slate-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl leading-relaxed">
                   Dal produttore direttamente a casa tua. Per rinnovo locali, la nostra fabbrica propone 16 splendide cucine sartoriali da esposizione a condizioni esclusive. Finiture di lusso ed elettrodomestici di marca inclusi.
                 </p>
+                <div className="mt-6 flex flex-col gap-2.5 text-sm sm:text-base text-white font-medium">
+                  <div className="flex items-center gap-2"><Check className="w-5 h-5 text-[#ad9271]" /> Sconto Fabbrica -50%</div>
+                  <div className="flex items-center gap-2"><Check className="w-5 h-5 text-[#ad9271]" /> Extra -10% se prenoti una visita online</div>
+                  <div className="flex items-center gap-2"><Check className="w-5 h-5 text-[#ad9271]" /> Trasporto e Montaggio Inclusi</div>
+                </div>
                 <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
                   <a
                     href="#contact"
-                    className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-[#0e1f2b] bg-[#ad9271] hover:bg-[#967d5f] hover:text-white transition-colors shadow-md hover:shadow-lg"
+                    className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-lg text-[#0e1f2b] bg-[#ad9271] hover:bg-[#967d5f] hover:text-white transition-colors shadow-md hover:shadow-lg"
                   >
-                    Blocca la tua offerta
+                    Blocca Bonus e Modello
                   </a>
                 </div>
               </motion.div>
@@ -248,8 +253,8 @@ export default function Home() {
               <h2 className="text-3xl font-extrabold text-[#0e1f2b] sm:text-4xl font-serif">
                 La Nostra Selezione in Esposizione
               </h2>
-              <p className="mt-4 text-lg text-slate-500">
-                Scopri i modelli attualmente in esposizione, disponibili a prezzi irripetibili. Contattaci per bloccare il tuo affare.
+              <p className="mt-4 text-lg text-slate-600 font-medium">
+                Ogni cucina che vedi è un <span className="text-[#ad9271] font-bold">Pezzo Unico</span> attualmente montato in showroom. <br className="hidden sm:block" />Chi prima si prenota, se lo aggiudica bloccando tutti i bonus.
               </p>
             </div>
 
@@ -264,8 +269,8 @@ export default function Home() {
                 >
                   <div className="aspect-[2/3] w-full bg-slate-100 relative overflow-hidden rounded-t-2xl">
                     <VideoPlayer src={kitchen.videoSrc} />
-                    <div className="absolute top-4 right-4 bg-[#ad9271] text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                      -50%
+                    <div className="absolute top-4 right-4 bg-red-600/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1 border border-red-500 uppercase tracking-wide">
+                      <Flame className="w-3.5 h-3.5" /> Solo 1 Rimasta
                     </div>
                     <div className="absolute top-4 left-4 bg-[#0e1f2b]/90 backdrop-blur-sm text-[#ad9271] border border-[#ad9271]/20 text-xs font-semibold px-3 py-1 rounded-full">
                       {kitchen.category}
@@ -310,9 +315,9 @@ export default function Home() {
                       <a
                         href="#contact"
                         onClick={() => setFormData({ ...formData, kitchenId: kitchen.name })}
-                        className="text-sm font-semibold text-[#0e1f2b] border border-[#ad9271] hover:bg-[#ad9271] hover:text-white px-4 py-2 rounded-lg transition-colors"
+                        className="text-xs sm:text-sm font-bold text-white bg-[#0e1f2b] hover:bg-[#ad9271] px-4 py-2.5 rounded-lg transition-colors shadow-md"
                       >
-                        Richiedi
+                        Blocca Offerta
                       </a>
                     </div>
                   </div>
@@ -327,9 +332,11 @@ export default function Home() {
           <div className="absolute inset-0 bg-[#0e1f2b]/80 backdrop-blur-[2px]"></div>
           <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-white/20">
-              <div className="bg-[#0e1f2b] py-6 px-8 text-white border-b-4 border-[#ad9271]">
-                <h3 className="text-2xl font-bold font-serif text-[#ad9271]">Richiedi Informazioni o Prenota una Visita</h3>
-                <p className="mt-1 text-slate-300 text-sm">Compila il modulo per fissare un appuntamento e ricevere il catalogo prezzi completo.</p>
+              <div className="bg-[#0e1f2b] py-8 px-8 text-white border-b-4 border-[#ad9271]">
+                <h3 className="text-2xl sm:text-3xl font-bold font-serif text-[#ad9271]">Prenota una Visita e Sblocca i Bonus</h3>
+                <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+                  Compilare il modulo <strong className="text-white bg-white/10 px-1 rounded">non ti vincola all&apos;acquisto</strong>. Serve solo a <strong>bloccare la cucina scelta per 48h</strong> (evitando che altri la comprino) e a garantirti il <strong>Trasporto Gratuito</strong> e l&apos;<strong>Extra 10% di sconto</strong> sul prezzo finale.
+                </p>
               </div>
               <div className="p-8">
                 {submitted ? (
@@ -412,9 +419,9 @@ export default function Home() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full bg-[#ad9271] hover:bg-[#967d5f] text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      className="w-full bg-[#ad9271] hover:bg-[#967d5f] text-white font-bold py-4 px-6 rounded-lg shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2 cursor-pointer text-lg uppercase tracking-wide"
                     >
-                      Invia Richiesta
+                      Richiedi Coupon e Blocca Cucine
                     </button>
                   </form>
                 )}
@@ -424,7 +431,15 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-[#0e1f2b] text-slate-400 py-12 border-t border-[#0e1f2b]">
+      {/* Sticky Bottom Bar for Mobile & Desktop */}
+      <div className="fixed bottom-0 left-0 w-full bg-[#ad9271] text-[#0e1f2b] py-3 px-4 z-50 shadow-[0_-4px_15px_rgba(0,0,0,0.15)] flex justify-between items-center md:justify-center md:gap-6 border-t border-white/20">
+        <p className="text-xs sm:text-sm font-bold truncate">🎁 Blocca il modello: Extra -10% e Trasporto Incluso!</p>
+        <a href="#contact" className="shrink-0 bg-[#0e1f2b] text-white text-xs sm:text-sm px-4 py-2 rounded-lg font-bold hover:bg-slate-800 transition-colors shadow-md">
+          Sblocca Bonus
+        </a>
+      </div>
+
+      <footer className="bg-[#0e1f2b] text-slate-400 py-12 pb-24 border-t border-[#0e1f2b]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm flex flex-col items-center">
           <img src="/Loghi/logo-05.png" alt="Ciesse Home" className="h-8 w-auto mb-6 opacity-80 hover:opacity-100 transition-opacity" />
           <p>© {new Date().getFullYear()} Ciesse Home. Tutti i diritti riservati.</p>
