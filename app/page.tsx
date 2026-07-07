@@ -196,10 +196,6 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-[#ad9271] border border-[#ad9271]/30 mb-6">
-                  <Flame className="w-4 h-4 text-[#ad9271]" />
-                  Sconti Straordinari Fino al 50%
-                </div>
                 <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-serif leading-none lg:leading-[1.1]">
                   Rinnovo Showroom:
                   <span className="block text-[#ad9271]">Cucine Sartoriali al 50% di sconto</span>
