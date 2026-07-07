@@ -200,9 +200,9 @@ export default function Home() {
                   <Flame className="w-4 h-4 text-[#ad9271]" />
                   Sconti Straordinari Fino al 50%
                 </div>
-                <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-serif leading-tight">
+                <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-serif leading-none lg:leading-[1.1]">
                   Rinnovo Showroom:
-                  <span className="block text-[#ad9271] mt-1 lg:mt-2">Cucine Sartoriali al 50% di sconto</span>
+                  <span className="block text-[#ad9271]">Cucine Sartoriali al 50% di sconto</span>
                 </h1>
                 <p className="mt-4 text-base text-slate-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl leading-relaxed">
                   Dal produttore direttamente a casa tua. Per rinnovo locali, la nostra fabbrica propone 16 splendide cucine sartoriali da esposizione a condizioni esclusive. Finiture di lusso ed elettrodomestici di marca inclusi.
