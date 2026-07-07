@@ -73,7 +73,8 @@ const VideoPlayer = ({ src }: { src: string }) => {
 
 export default function Home() {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     kitchenId: "",
@@ -350,18 +351,32 @@ export default function Home() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-1 flex items-center gap-1.5">
-                        <User className="w-4 h-4 text-slate-400" /> Nome Completo
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#ad9271] focus:border-[#ad9271] outline-none transition-shadow"
-                        placeholder="Es. Mario Rossi"
-                      />
+                    <div className="grid gap-6 sm:grid-cols-2">
+                      <div>
+                        <label className="block text-sm font-medium text-slate-700 mb-1 flex items-center gap-1.5">
+                          <User className="w-4 h-4 text-slate-400" /> Nome
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.firstName}
+                          onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                          className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#ad9271] focus:border-[#ad9271] outline-none transition-shadow"
+                          placeholder="Es. Mario"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-slate-700 mb-1 flex items-center gap-1.5">
+                          <User className="w-4 h-4 text-slate-400" /> Cognome (Opzionale)
+                        </label>
+                        <input
+                          type="text"
+                          value={formData.lastName}
+                          onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                          className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#ad9271] focus:border-[#ad9271] outline-none transition-shadow"
+                          placeholder="Es. Rossi"
+                        />
+                      </div>
                     </div>
                     <div className="grid gap-6 sm:grid-cols-2">
                       <div>
