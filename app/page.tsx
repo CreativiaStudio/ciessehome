@@ -200,10 +200,10 @@ export default function Home() {
                 </div>
                 <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-serif leading-tight">
                   Rinnovo Showroom:
-                  <span className="block text-[#ad9271] mt-1 lg:mt-2">Cucine Premium al 50% di sconto</span>
+                  <span className="block text-[#ad9271] mt-1 lg:mt-2">Cucine Sartoriali al 50% di sconto</span>
                 </h1>
                 <p className="mt-4 text-base text-slate-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl leading-relaxed">
-                  Per rinnovo locali, proponiamo 16 splendide cucine di design da esposizione a condizioni esclusive. Finiture di lusso ed elettrodomestici di marca inclusi, pronte per essere installate a casa tua.
+                  Dal produttore direttamente a casa tua. Per rinnovo locali, la nostra fabbrica propone 16 splendide cucine sartoriali da esposizione a condizioni esclusive. Finiture di lusso ed elettrodomestici di marca inclusi.
                 </p>
                 <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
                   <a
