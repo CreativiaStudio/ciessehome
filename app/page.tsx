@@ -119,9 +119,9 @@ export default function Home() {
           <div className="flex items-center gap-4">
             <a
               href="#contact"
-              className="hidden sm:inline-flex bg-[#ad9271] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#967d5f] transition-colors"
+              className="hidden sm:inline-flex bg-[#ad9271] text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-[#967d5f] transition-colors"
             >
-              Richiedi Info
+              Sblocca il Bonus
             </a>
             
             {/* Mobile Menu Button */}
@@ -160,10 +160,10 @@ export default function Home() {
             </a>
             <a
               href="#contact"
-              className="bg-[#ad9271] text-white px-4 py-3 rounded-lg text-center font-semibold hover:bg-[#967d5f] transition-colors mt-2"
+              className="bg-[#ad9271] text-white px-4 py-3 rounded-lg text-center font-bold hover:bg-[#967d5f] transition-colors mt-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Richiedi Info
+              Sblocca il Bonus
             </a>
           </div>
         )}
@@ -431,9 +431,9 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Sticky Bottom Bar for Mobile & Desktop */}
-      <div className="fixed bottom-0 left-0 w-full bg-[#ad9271] text-[#0e1f2b] py-3 px-4 z-50 shadow-[0_-4px_15px_rgba(0,0,0,0.15)] flex justify-between items-center md:justify-center md:gap-6 border-t border-white/20">
-        <p className="text-xs sm:text-sm font-bold truncate">🎁 Blocca il modello: Extra -10% e Trasporto Incluso!</p>
+      {/* Sticky Bottom Bar for Mobile Only */}
+      <div className="fixed bottom-0 left-0 w-full bg-[#ad9271] text-[#0e1f2b] py-3 px-4 z-50 shadow-[0_-4px_15px_rgba(0,0,0,0.15)] flex md:hidden justify-between items-center border-t border-white/20">
+        <p className="text-xs sm:text-sm font-bold truncate">🎁 Blocca il modello: Extra -10% e Trasporto!</p>
         <a href="#contact" className="shrink-0 bg-[#0e1f2b] text-white text-xs sm:text-sm px-4 py-2 rounded-lg font-bold hover:bg-slate-800 transition-colors shadow-md">
           Sblocca Bonus
         </a>
