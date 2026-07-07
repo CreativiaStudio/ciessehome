@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
 import { Flame, Maximize2, ChefHat, Calendar, Mail, Phone, User, Send, Check, Menu, X, Play } from "lucide-react";
 import { kitchens } from "./data/kitchens";
@@ -93,9 +94,47 @@ export default function Home() {
     setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Lead submitted:", formData);
+    
+    // Genera UUID per deduplicazione Meta (Client + Server)
+    const eventId = uuidv4();
+    
+    // 1. Invia a GTM (Client-Side Meta Pixel)
+    if (typeof window !== "undefined" && (window as any).dataLayer) {
+      (window as any).dataLayer.push({
+        event: "custom_lead",
+        eventID: eventId,
+        content_name: "Richiesta Rinnovo Showroom"
+      });
+    }
+
+    // 2. Invia al Webhook di N8N (Server-Side Meta CAPI)
+    try {
+      await fetch("https://n8n.creativiastudio.com/webhook-test/47ff0a28-48b5-427e-8173-5e932468dfb3", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          event_name: "Lead",
+          event_id: eventId,
+          event_time: Math.floor(Date.now() / 1000),
+          event_source_url: window.location.href,
+          user_data: {
+            fn: formData.firstName,
+            ln: formData.lastName,
+            em: formData.email,
+            ph: formData.phone
+          },
+          custom_data: {
+            kitchen_id: formData.kitchenId,
+            notes: formData.notes
+          }
+        })
+      });
+    } catch (err) {
+      console.error("Errore invio webhook:", err);
+    }
+
     setSubmitted(true);
   };
 
