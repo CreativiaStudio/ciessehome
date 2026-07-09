@@ -9,7 +9,7 @@ export const kitchens = [
       "Elettrodomestici base inclusi",
       "Possibilità di sostituzione Top su misura"
     ],
-    price: 1800,
+    price: 1900,
     imageSrc: "/Immagini/civetta-1.jpg"
   },
   {
@@ -83,7 +83,7 @@ export const kitchens = [
       "Predisposizione colonna forno e microonde",
       "Struttura garantita dal produttore"
     ],
-    price: 2400,
+    price: 1900,
     imageSrc: "/Immagini/civetta-2.jpg"
   },
   {
@@ -153,7 +153,7 @@ export const kitchens = [
       "Flessibilità di personalizzazione post-vendita",
       "Consulenza tecnica per adattamento"
     ],
-    price: 2800,
+    price: 1900,
     imageSrc: "/Immagini/civetta-3.jpg"
   },
   {
