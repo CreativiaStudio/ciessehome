@@ -226,6 +226,20 @@ export const kitchens = [
     videoSrc: "/videos/venus-rovere-nodato.mp4",
   },
   {
+    id: "moda-verde-sold",
+    name: "Modello Modà Isola Laccata",
+    category: "Cucine",
+    features: [
+      "Anta laccata opaca con maniglia",
+      "Gruppo colonne e Isola centrale",
+      "Elettrodomestici Top di Gamma",
+      "Cantinetta vini integrata"
+    ],
+    price: 14500,
+    videoSrc: "/videos/moda-verde.mp4",
+    soldOut: true
+  },
+  {
     id: "venus-rigatino",
     name: "Modello Venus Rigatino",
     category: "Cucine",

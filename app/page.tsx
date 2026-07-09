@@ -309,13 +309,22 @@ export default function Home() {
                 >
                   <div className="aspect-[2/3] w-full bg-slate-100 relative overflow-hidden rounded-t-2xl">
                     {(kitchen as any).imageSrc ? (
-                      <img src={(kitchen as any).imageSrc} alt={kitchen.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                      <img src={(kitchen as any).imageSrc} alt={kitchen.name} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${(kitchen as any).soldOut ? 'grayscale opacity-60' : ''}`} />
                     ) : (
-                      <VideoPlayer src={(kitchen as any).videoSrc} />
+                      <div className={`w-full h-full ${(kitchen as any).soldOut ? 'grayscale opacity-60' : ''}`}>
+                        <VideoPlayer src={(kitchen as any).videoSrc} />
+                      </div>
                     )}
-                    <div className="absolute top-4 right-4 bg-red-600/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1 border border-red-500 uppercase tracking-wide">
-                      <Flame className="w-3.5 h-3.5" /> Solo 1 Rimasta
-                    </div>
+                    
+                    {(kitchen as any).soldOut ? (
+                      <div className="absolute top-4 right-4 bg-slate-800/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1 border border-slate-600 uppercase tracking-wide">
+                        VENDUTO
+                      </div>
+                    ) : (
+                      <div className="absolute top-4 right-4 bg-red-600/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1 border border-red-500 uppercase tracking-wide">
+                        <Flame className="w-3.5 h-3.5" /> Solo 1 Rimasta
+                      </div>
+                    )}
                     <div className="absolute top-4 left-4 bg-[#0e1f2b]/90 backdrop-blur-sm text-[#ad9271] border border-[#ad9271]/20 text-xs font-semibold px-3 py-1 rounded-full">
                       {kitchen.category}
                     </div>
@@ -357,13 +366,19 @@ export default function Home() {
                           <span>{kitchen.price.toLocaleString("it-IT")}</span>
                         </p>
                       </div>
-                      <a
-                        href="#contact"
-                        onClick={() => setFormData({ ...formData, kitchenId: kitchen.name })}
-                        className="text-xs sm:text-sm font-bold text-white bg-[#0e1f2b] hover:bg-[#ad9271] px-3 sm:px-4 py-2.5 rounded-lg transition-colors shadow-md whitespace-nowrap shrink-0"
-                      >
-                        Richiedi Dettagli
-                      </a>
+                      {(kitchen as any).soldOut ? (
+                        <div className="text-xs sm:text-sm font-bold text-slate-500 bg-slate-200 px-3 sm:px-4 py-2.5 rounded-lg whitespace-nowrap shrink-0 border border-slate-300 uppercase cursor-not-allowed text-center">
+                          Esaurito
+                        </div>
+                      ) : (
+                        <a
+                          href="#contact"
+                          onClick={() => setFormData({ ...formData, kitchenId: kitchen.name })}
+                          className="text-xs sm:text-sm font-bold text-white bg-[#0e1f2b] hover:bg-[#ad9271] px-3 sm:px-4 py-2.5 rounded-lg transition-colors shadow-md whitespace-nowrap shrink-0"
+                        >
+                          Richiedi Dettagli
+                        </a>
+                      )}
                     </div>
                   </div>
                 </motion.div>
