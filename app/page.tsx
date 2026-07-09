@@ -276,7 +276,7 @@ export default function Home() {
                     Cucine Sartoriali al 50% di sconto
                   </span>
                 </h1>
-                <p className="mt-4 text-base text-slate-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl leading-relaxed">
+                <p className="pt-[40px] text-base text-white sm:text-lg lg:text-[1.05rem] xl:text-[1.15rem] leading-relaxed pr-4">
                   Dal produttore direttamente a casa tua. Per rinnovo locali, la nostra fabbrica propone {kitchens.length} splendide cucine sartoriali da esposizione a condizioni esclusive. Finiture di lusso ed elettrodomestici di marca inclusi.
                 </p>
                 </motion.div>
