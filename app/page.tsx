@@ -361,7 +361,7 @@ export default function Home() {
                         onClick={() => setFormData({ ...formData, kitchenId: kitchen.name })}
                         className="text-xs sm:text-sm font-bold text-white bg-[#0e1f2b] hover:bg-[#ad9271] px-4 py-2.5 rounded-lg transition-colors shadow-md"
                       >
-                        Ricevi il Catalogo
+                        Richiedi Dettagli
                       </a>
                     </div>
                   </div>
@@ -377,10 +377,21 @@ export default function Home() {
           <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-white/20">
               <div className="bg-[#0e1f2b] py-8 px-8 text-white border-b-4 border-[#ad9271]">
-                <h3 className="text-2xl sm:text-3xl font-bold font-serif text-[#ad9271]">Ricevi il Catalogo su WhatsApp e Sblocca i Bonus</h3>
-                <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
-                  Compilare il modulo <strong className="text-white bg-white/10 px-1 rounded">non ti vincola all&apos;acquisto</strong>. Riceverai a breve il <strong>Catalogo in PDF su WhatsApp</strong> e avrai automaticamente bloccato l&apos;<strong>Extra 10% di sconto</strong> e il <strong>Trasporto Gratuito</strong> se deciderai di venirci a trovare.
-                </p>
+                {formData.kitchenId ? (
+                  <>
+                    <h3 className="text-2xl sm:text-3xl font-bold font-serif text-[#ad9271]">Scopri di più sul modello {formData.kitchenId}</h3>
+                    <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+                      Compilare il modulo <strong className="text-white bg-white/10 px-1 rounded">non ti vincola all&apos;acquisto</strong>. Lello ti contatterà su WhatsApp per mandarti <strong>foto reali e dettagli</strong> di questa cucina esatta, bloccando per te l&apos;<strong>Extra 10% di sconto</strong>.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <h3 className="text-2xl sm:text-3xl font-bold font-serif text-[#ad9271]">Ricevi il Catalogo su WhatsApp e Sblocca i Bonus</h3>
+                    <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+                      Compilare il modulo <strong className="text-white bg-white/10 px-1 rounded">non ti vincola all&apos;acquisto</strong>. Riceverai a breve il <strong>Catalogo in PDF su WhatsApp</strong> e avrai automaticamente bloccato l&apos;<strong>Extra 10% di sconto</strong> e il <strong>Trasporto Gratuito</strong> se deciderai di venirci a trovare.
+                    </p>
+                  </>
+                )}
               </div>
               <div className="p-8">
                 {submitted ? (
@@ -493,7 +504,7 @@ export default function Home() {
                       type="submit"
                       className="w-full bg-[#ad9271] hover:bg-[#967d5f] text-white font-bold py-4 px-6 rounded-lg shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2 cursor-pointer text-lg uppercase tracking-wide mt-2"
                     >
-                      Voglio il Catalogo su WhatsApp
+                      {formData.kitchenId ? "Ricevi Dettagli su WhatsApp" : "Voglio il Catalogo su WhatsApp"}
                     </button>
                   </form>
                 )}
