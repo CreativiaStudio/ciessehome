@@ -511,14 +511,14 @@ export default function Home() {
                   <>
                     <h3 className="text-2xl sm:text-3xl font-bold font-serif text-[#ad9271]">Scopri di più sul modello {formData.kitchenId}</h3>
                     <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
-                      Compilare il modulo <strong className="text-white bg-white/10 px-1 rounded">non ti vincola all&apos;acquisto</strong>. Lello ti contatterà su WhatsApp per mandarti <strong>foto reali e dettagli</strong> di questa cucina esatta, bloccando per te l&apos;<strong>Extra 10% di sconto</strong>.
+                      Compilare il modulo <strong className="text-white bg-white/10 px-1 rounded">non ti vincola all&apos;acquisto</strong>. Lello ti contatterà su WhatsApp per mandarti <strong>foto reali e dettagli</strong> di questa cucina esatta, bloccando per te l&apos;<strong>Extra 10% di sconto</strong> (che si somma al -50% di listino) e il <strong>Trasporto e Montaggio Gratuiti</strong>.
                     </p>
                   </>
                 ) : (
                   <>
                     <h3 className="text-2xl sm:text-3xl font-bold font-serif text-[#ad9271]">Richiedi Informazioni e Sblocca i Bonus</h3>
                     <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
-                      Compilare il modulo <strong className="text-white bg-white/10 px-1 rounded">non ti vincola all&apos;acquisto</strong>. Un nostro consulente ti invierà tutte le informazioni su WhatsApp e avrai automaticamente bloccato l&apos;<strong>Extra 10% di sconto</strong> e il <strong>Trasporto Gratuito</strong> se deciderai di venirci a trovare.
+                      Compilare il modulo <strong className="text-white bg-white/10 px-1 rounded">non ti vincola all&apos;acquisto</strong>. Un nostro consulente ti invierà tutte le informazioni su WhatsApp e avrai automaticamente bloccato l&apos;<strong>Extra 10% di sconto</strong> (che si somma al -50% di listino) e il <strong>Trasporto e Montaggio Gratuiti</strong> se deciderai di venirci a trovare.
                     </p>
                   </>
                 )}
@@ -659,7 +659,7 @@ export default function Home() {
 
       {/* Sticky Bottom Bar for Mobile Only */}
       <div className="fixed bottom-0 left-0 w-full bg-[#ad9271] text-[#0e1f2b] py-3 px-4 z-50 shadow-[0_-4px_15px_rgba(0,0,0,0.15)] flex md:hidden justify-between items-center border-t border-white/20">
-        <p className="text-xs sm:text-sm font-bold truncate">🎁 Blocca il modello: Extra -10% e Trasporto!</p>
+        <p className="text-xs sm:text-sm font-bold truncate">🎁 Blocca il modello: -50% + Extra -10% + Trasporto!</p>
         <a href="#contact" className="shrink-0 bg-[#0e1f2b] text-white text-xs sm:text-sm px-4 py-2 rounded-lg font-bold hover:bg-slate-800 transition-colors shadow-md">
           Richiedi Info
         </a>
