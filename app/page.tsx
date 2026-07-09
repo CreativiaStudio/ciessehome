@@ -458,16 +458,21 @@ export default function Home() {
         <section className="py-20 sm:py-24 bg-white relative border-t border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1 h-[400px] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
-                <iframe 
-                  src="https://maps.google.com/maps?q=Ciesse%20Home%20Nocera%20Inferiore&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen={false} 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade">
-                </iframe>
+              <div className="order-2 lg:order-1 h-[400px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 relative group cursor-pointer bg-slate-100">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Ciesse+Home+S.r.l.%2C+Nocera+Inferiore" target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+                  <div className="absolute inset-0 bg-[#0e1f2b]/5 group-hover:bg-[#0e1f2b]/20 transition-colors z-10 flex items-center justify-center">
+                    <div className="bg-white/95 backdrop-blur text-[#0e1f2b] font-bold px-6 py-3 rounded-full shadow-xl opacity-90 group-hover:opacity-100 transition-all transform group-hover:scale-105 flex items-center gap-2">
+                      <MapPin className="w-5 h-5 text-[#ad9271]" />
+                      Avvia Navigatore
+                    </div>
+                  </div>
+                  <img 
+                    src="/Immagini/mappa-ciesse.jpg" 
+                    alt="Mappa Ciesse Home" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    onError={(e) => { e.currentTarget.src = 'https://placehold.co/800x600/f1f5f9/94a3b8?text=Inserisci+Screenshot+Mappa' }} 
+                  />
+                </a>
               </div>
               <div className="order-1 lg:order-2">
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0e1f2b] font-serif mb-6 leading-tight">
