@@ -272,20 +272,14 @@ export default function Home() {
               >
                 <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-serif leading-none lg:leading-[1.1]">
                   Rinnovo Showroom:
-                  <span className="block text-[#ad9271]">Cucine Sartoriali al 50% di sconto</span>
+                  <span className="block mt-3 text-transparent bg-clip-text bg-gradient-to-r from-[#ad9271] via-[#f3e5d0] to-[#ad9271] bg-[length:200%_auto] animate-gradient text-[1.15em] font-black drop-shadow-sm">
+                    Cucine Sartoriali al 50% di sconto
+                  </span>
                 </h1>
                 <p className="mt-4 text-base text-slate-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl leading-relaxed">
                   Dal produttore direttamente a casa tua. Per rinnovo locali, la nostra fabbrica propone {kitchens.length} splendide cucine sartoriali da esposizione a condizioni esclusive. Finiture di lusso ed elettrodomestici di marca inclusi.
                 </p>
-                <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-lg text-[#0e1f2b] bg-[#ad9271] hover:bg-[#967d5f] hover:text-white transition-colors shadow-md hover:shadow-lg"
-                  >
-                    Blocca l'Extra 10% Ora
-                  </a>
-                </div>
-              </motion.div>
+                </motion.div>
               <div className="mt-12 lg:mt-0 lg:col-span-6">
                 <motion.div 
                   className="bg-white p-8 rounded-2xl shadow-xl border border-slate-100"
