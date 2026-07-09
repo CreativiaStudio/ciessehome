@@ -159,8 +159,8 @@ export default function Home() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
             <a href="#catalog" className="hover:text-[#ad9271] transition-colors">Rinnovo Esposizione</a>
-            <a href="#catalog" className="hover:text-[#ad9271] transition-colors">L&apos;Esposizione</a>
-            <a href="#contact" className="hover:text-[#ad9271] transition-colors">Prenota Visita</a>
+            <a href="#showroom" className="hover:text-[#ad9271] transition-colors">L&apos;Esposizione</a>
+            <a href="#contact" className="hover:text-[#ad9271] transition-colors">Contatti</a>
           </nav>
           
           <div className="flex items-center gap-4">
@@ -192,7 +192,7 @@ export default function Home() {
               Rinnovo Esposizione
             </a>
             <a 
-              href="#catalog" 
+              href="#showroom" 
               className="text-[#0e1f2b] font-medium py-2 border-b border-slate-100"
               onClick={() => setIsMobileMenuOpen(false)}
             >
@@ -203,7 +203,7 @@ export default function Home() {
               className="text-[#0e1f2b] font-medium py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Prenota Visita
+              Contatti
             </a>
             <a
               href="#contact"
@@ -391,7 +391,7 @@ export default function Home() {
         </section>
 
         {/* Identità e Showroom Section */}
-        <section className="py-20 sm:py-24 bg-white relative border-t border-slate-100">
+        <section id="showroom" className="py-20 sm:py-24 bg-white relative border-t border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div>
