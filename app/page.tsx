@@ -246,7 +246,7 @@ export default function Home() {
                   <span className="block text-[#ad9271]">Cucine Sartoriali al 50% di sconto</span>
                 </h1>
                 <p className="mt-4 text-base text-slate-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl leading-relaxed">
-                  Dal produttore direttamente a casa tua. Per rinnovo locali, la nostra fabbrica propone 16 splendide cucine sartoriali da esposizione a condizioni esclusive. Finiture di lusso ed elettrodomestici di marca inclusi.
+                  Dal produttore direttamente a casa tua. Per rinnovo locali, la nostra fabbrica propone {kitchens.length} splendide cucine sartoriali da esposizione a condizioni esclusive. Finiture di lusso ed elettrodomestici di marca inclusi.
                 </p>
                 <div className="mt-6 flex flex-col gap-2.5 text-sm sm:text-base text-white font-medium">
                   <div className="flex items-center gap-2"><Check className="w-5 h-5 text-[#ad9271]" /> Sconto Fabbrica -50%</div>
@@ -274,7 +274,7 @@ export default function Home() {
                   </div>
                   <div className="mt-6 flex justify-around text-center text-slate-600 text-sm">
                     <div>
-                      <span className="block text-2xl font-bold text-slate-950">16</span>
+                      <span className="block text-2xl font-bold text-slate-950">{kitchens.length}</span>
                       Modelli Disponibili
                     </div>
                     <div className="border-l border-slate-200 h-10 my-auto"></div>
