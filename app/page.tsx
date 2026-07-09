@@ -349,11 +349,12 @@ export default function Home() {
                       </div>
                     </div>
                     
-                    <div className="pt-4 border-t border-slate-100 flex items-end justify-between mt-auto">
-                      <div>
-                        <p className="text-xs text-slate-400 font-medium line-through mb-0.5">Listino: € {kitchen.price * 2}</p>
-                        <p className="text-2xl font-bold text-[#ad9271] leading-none">
-                          € {kitchen.price.toLocaleString("it-IT")}
+                    <div className="flex items-center justify-between mt-4 pt-4 border-t border-slate-100 gap-2">
+                      <div className="min-w-0">
+                        <p className="text-xs text-slate-400 line-through whitespace-nowrap truncate">Listino: € {kitchen.price * 2}</p>
+                        <p className="text-xl sm:text-2xl font-bold text-[#ad9271] whitespace-nowrap flex items-baseline gap-1">
+                          <span className="text-base sm:text-lg">€</span>
+                          <span>{kitchen.price.toLocaleString("it-IT")}</span>
                         </p>
                       </div>
                       <a
