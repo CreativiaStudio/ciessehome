@@ -449,7 +449,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1 h-[400px] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.603099951662!2d14.6190779!3d40.7570493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133bb7f5ab167f65%3A0xb3671dbb0b6c6b3e!2sCiesse%20Home%20S.r.l.!5e0!3m2!1sit!2sit!4v1709210000000!5m2!1sit!2sit" 
+                  src="https://maps.google.com/maps?q=Ciesse%20Cucine%20S.r.l.%20Nocera%20Inferiore&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
