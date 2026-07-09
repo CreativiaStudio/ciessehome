@@ -440,9 +440,15 @@ export default function Home() {
             </div>
             <div className="bg-white p-4 sm:p-8 rounded-2xl shadow-xl border border-slate-100">
               <style dangerouslySetInnerHTML={{__html: `
-                .elfsight-app-04e5f5df-92af-4c4f-b2f9-c605cd4b28c7 [class*="Button"],
-                .elfsight-app-04e5f5df-92af-4c4f-b2f9-c605cd4b28c7 a[target="_blank"] {
+                .elfsight-app-04e5f5df-92af-4c4f-b2f9-c605cd4b28c7 [class*="Header"] [class*="Button"],
+                .elfsight-app-04e5f5df-92af-4c4f-b2f9-c605cd4b28c7 [class*="Header"] a[target="_blank"] {
                   color: #0e1f2b !important;
+                }
+                .elfsight-app-04e5f5df-92af-4c4f-b2f9-c605cd4b28c7 [class*="Button"] {
+                  /* Assicuriamoci che il tasto Carica Altro resti leggibile (bianco su scuro) */
+                }
+                .elfsight-app-04e5f5df-92af-4c4f-b2f9-c605cd4b28c7 [class*="LoadMore"] {
+                  color: #ffffff !important;
                 }
                 .elfsight-app-04e5f5df-92af-4c4f-b2f9-c605cd4b28c7 [class*="ReviewText"] a {
                   color: #ad9271 !important;
