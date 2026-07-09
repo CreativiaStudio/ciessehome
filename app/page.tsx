@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
 import Script from "next/script";
@@ -87,9 +87,26 @@ export default function Home() {
   const [submitted, setSubmitted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Stato per l'effetto Spotlight nella Hero
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHoveringHero, setIsHoveringHero] = useState(false);
+
+  const sliderImages = [
+    '/Immagini/slider/slide-1.jpg',
+    '/Immagini/slider/slide-2.jpg',
+    '/Immagini/slider/slide-3.jpg',
+    '/Immagini/slider/slide-4.jpg',
+    '/Immagini/slider/slide-5.jpg',
+    '/Immagini/slider/slide-6.jpg',
+    '/Immagini/slider/slide-7.jpg',
+  ];
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -219,11 +236,13 @@ export default function Home() {
       <main>
         {/* Hero Section */}
         <section 
-          className="relative overflow-hidden bg-[#0e1f2b] py-20 lg:py-32"
+          className="relative overflow-hidden bg-cover bg-center py-20 lg:py-32"
+          style={{ backgroundImage: "url('/Immagini/hero-bg.jpg')" }}
           onMouseMove={handleMouseMove}
           onMouseEnter={() => setIsHoveringHero(true)}
           onMouseLeave={() => setIsHoveringHero(false)}
         >
+          <div className="absolute inset-0 bg-[#0e1f2b] opacity-80 z-0"></div>
           {/* Spotlight dinamico al passaggio del mouse */}
           <motion.div
             className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-500 ease-in-out"
@@ -265,7 +284,14 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
                   <div className="aspect-[4/3] sm:aspect-video w-full bg-slate-200 rounded-lg overflow-hidden relative shadow-inner">
-                    <img src="/Immagini/Showroom.jpg" alt="Il nostro Showroom" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                    {sliderImages.map((src, index) => (
+                      <img 
+                        key={src}
+                        src={src} 
+                        alt={`Ciesse Showroom ${index + 1}`} 
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
+                      />
+                    ))}
                   </div>
                   <div className="mt-6 flex justify-around text-center text-slate-600 text-sm">
                     <div>
