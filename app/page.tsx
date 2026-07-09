@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
 import Script from "next/script";
-import { Play, X, Star, Check, ArrowRight, ShieldCheck, Clock, Flame, ChevronRight, Menu, Send, MapPin, Phone, Mail, User, Maximize2, ChefHat, Calendar } from "lucide-react";
+import { Play, X, Star, Check, ArrowRight, ShieldCheck, Clock, Flame, ChevronRight, Menu, Send, MapPin, Phone, Mail, User, Maximize2, ChefHat, Calendar, Truck } from "lucide-react";
 import { kitchens } from "./data/kitchens";
 
 const VideoPlayer = ({ src }: { src: string }) => {
@@ -248,11 +248,6 @@ export default function Home() {
                 <p className="mt-4 text-base text-slate-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl leading-relaxed">
                   Dal produttore direttamente a casa tua. Per rinnovo locali, la nostra fabbrica propone {kitchens.length} splendide cucine sartoriali da esposizione a condizioni esclusive. Finiture di lusso ed elettrodomestici di marca inclusi.
                 </p>
-                <div className="mt-6 flex flex-col gap-2.5 text-sm sm:text-base text-white font-medium">
-                  <div className="flex items-center gap-2"><Check className="w-5 h-5 text-[#ad9271]" /> Sconto Fabbrica -50%</div>
-                  <div className="flex items-center gap-2"><Check className="w-5 h-5 text-[#ad9271]" /> Extra -10% se prenoti una visita online</div>
-                  <div className="flex items-center gap-2"><Check className="w-5 h-5 text-[#ad9271]" /> Trasporto e Montaggio Inclusi</div>
-                </div>
                 <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
                   <a
                     href="#contact"
@@ -282,6 +277,9 @@ export default function Home() {
                       <span className="block text-2xl font-bold text-slate-950">-50%</span>
                       Prezzo di Listino
                     </div>
+                  </div>
+                  <div className="mt-6 bg-[#ad9271]/10 rounded-xl p-3 flex items-center justify-center gap-2 text-[#ad9271] font-bold text-sm">
+                    <Truck className="w-5 h-5" /> Trasporto e Montaggio Inclusi
                   </div>
                 </motion.div>
               </div>
