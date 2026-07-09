@@ -359,7 +359,7 @@ export default function Home() {
                       <a
                         href="#contact"
                         onClick={() => setFormData({ ...formData, kitchenId: kitchen.name })}
-                        className="text-xs sm:text-sm font-bold text-white bg-[#0e1f2b] hover:bg-[#ad9271] px-4 py-2.5 rounded-lg transition-colors shadow-md"
+                        className="text-xs sm:text-sm font-bold text-white bg-[#0e1f2b] hover:bg-[#ad9271] px-3 sm:px-4 py-2.5 rounded-lg transition-colors shadow-md whitespace-nowrap shrink-0"
                       >
                         Richiedi Dettagli
                       </a>
