@@ -98,6 +98,16 @@ export default function Home() {
     '/Immagini/slider/slide-5.jpg',
     '/Immagini/slider/slide-6.jpg',
     '/Immagini/slider/slide-7.jpg',
+    '/Immagini/slider/slide-8.jpeg',
+    '/Immagini/slider/slide-9.jpeg',
+    '/Immagini/slider/slide-10.jpeg',
+    '/Immagini/slider/slide-11.jpeg',
+    '/Immagini/slider/slide-12.jpeg',
+    '/Immagini/slider/slide-13.jpeg',
+    '/Immagini/slider/slide-14.jpeg',
+    '/Immagini/slider/slide-15.jpeg',
+    '/Immagini/slider/slide-16.jpeg',
+    '/Immagini/slider/slide-17.jpeg',
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -255,7 +265,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
               <motion.div 
-                className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-7 lg:text-left"
+                className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -276,7 +286,7 @@ export default function Home() {
                   </a>
                 </div>
               </motion.div>
-              <div className="mt-12 lg:mt-0 lg:col-span-5">
+              <div className="mt-12 lg:mt-0 lg:col-span-6">
                 <motion.div 
                   className="bg-white p-8 rounded-2xl shadow-xl border border-slate-100"
                   initial={{ opacity: 0, scale: 0.95 }}
