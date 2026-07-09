@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
-import { Flame, Maximize2, ChefHat, Calendar, Mail, Phone, User, Send, Check, Menu, X, Play } from "lucide-react";
+import Script from "next/script";
+import { Play, X, Star, Check, ArrowRight, ShieldCheck, Clock, Flame, ChevronRight, Menu, Send, MapPin, Phone, Mail, User, Maximize2, ChefHat, Calendar } from "lucide-react";
 import { kitchens } from "./data/kitchens";
 
 const VideoPlayer = ({ src }: { src: string }) => {
@@ -383,6 +384,108 @@ export default function Home() {
                   </div>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Identità e Showroom Section */}
+        <section className="py-20 sm:py-24 bg-white relative border-t border-slate-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              <div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0e1f2b] font-serif mb-6 leading-tight">
+                  Una vera e propria<br/><span className="text-[#ad9271]">casa della cucina</span>
+                </h2>
+                <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
+                  <p>
+                    Immagina un posto dove poter nutrire le tue idee di design e arredamento, uno spazio dove toccare da vicino i tuoi desideri. Il nostro showroom con i suoi <strong>2000 mq</strong>, ti accoglie in un piacevole viaggio nel mondo Ciesse.
+                  </p>
+                  <div className="bg-slate-50 p-6 rounded-xl border-l-4 border-[#ad9271]">
+                    <h3 className="text-xl font-bold text-[#0e1f2b] mb-2">Formula Produzione + Vendita Diretta</h3>
+                    <p className="text-base m-0">
+                      Siamo produttori dal 1968, costruiamo in sede la cucina che acquisterai in Showroom. Il taglio di ogni intermediario comporta un vantaggio ineguagliabile, che stimiamo in un <strong>risparmio di circa il 60%</strong> rispetto a un prodotto di pari caratteristiche e qualità.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4 mt-8">
+                  <img src="/Immagini/showroom-1.jpg" alt="Showroom Ciesse" className="rounded-2xl shadow-lg w-full h-[250px] object-cover" />
+                  <img src="/Immagini/showroom-2.jpg" alt="Cucine esposte" className="rounded-2xl shadow-lg w-full h-[200px] object-cover" />
+                </div>
+                <div className="space-y-4">
+                  <img src="/Immagini/showroom-3.jpg" alt="Dettagli showroom" className="rounded-2xl shadow-lg w-full h-[300px] object-cover" />
+                  <div className="bg-[#0e1f2b] rounded-2xl shadow-lg p-6 flex flex-col justify-center items-center text-center h-[150px]">
+                    <span className="text-4xl font-bold text-[#ad9271] mb-1">50+</span>
+                    <span className="text-white text-sm uppercase tracking-wider">Anni di<br/>Esperienza</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Recensioni Elfsight Section */}
+        <section className="py-20 sm:py-24 bg-slate-50 relative border-t border-slate-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0e1f2b] font-serif mb-4">
+                Cosa dicono i nostri clienti
+              </h2>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                La soddisfazione di chi ha già scelto Ciesse Home è la nostra garanzia più grande.
+              </p>
+            </div>
+            <div className="bg-white p-4 sm:p-8 rounded-2xl shadow-xl border border-slate-100">
+              <Script src="https://apps.elfsight.com/p/platform.js" strategy="lazyOnload" />
+              <div className="elfsight-app-04e5f5df-92af-4c4f-b2f9-c605cd4b28c7"></div>
+            </div>
+          </div>
+        </section>
+
+        {/* Mappa Sede Section */}
+        <section className="py-20 sm:py-24 bg-white relative border-t border-slate-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1 h-[400px] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.603099951662!2d14.6190779!3d40.7570493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133bb7f5ab167f65%3A0xb3671dbb0b6c6b3e!2sCiesse%20Home%20S.r.l.!5e0!3m2!1sit!2sit!4v1709210000000!5m2!1sit!2sit" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen={false} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+              <div className="order-1 lg:order-2">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0e1f2b] font-serif mb-6 leading-tight">
+                  Vieni a toccare con mano
+                </h2>
+                <p className="text-lg text-slate-600 mb-8">
+                  Fissa un appuntamento o passa a trovarci. Il nostro team di interior designer ti aspetta per progettare insieme la cucina dei tuoi sogni.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-[#ad9271]/10 flex items-center justify-center shrink-0">
+                      <MapPin className="w-6 h-6 text-[#ad9271]" />
+                    </div>
+                    <div>
+                      <h4 className="text-[#0e1f2b] font-bold text-lg mb-1">Sede Operativa e Showroom</h4>
+                      <p className="text-slate-600">Località Fosso Imperatore, Lotto 14<br/>84014 Nocera Inferiore (SA)</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-[#ad9271]/10 flex items-center justify-center shrink-0">
+                      <Phone className="w-6 h-6 text-[#ad9271]" />
+                    </div>
+                    <div>
+                      <h4 className="text-[#0e1f2b] font-bold text-lg mb-1">Telefono</h4>
+                      <p className="text-slate-600">081 277 8023</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
