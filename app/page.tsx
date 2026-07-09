@@ -308,7 +308,11 @@ export default function Home() {
                   viewport={{ once: true, margin: "-100px" }}
                 >
                   <div className="aspect-[2/3] w-full bg-slate-100 relative overflow-hidden rounded-t-2xl">
-                    <VideoPlayer src={kitchen.videoSrc} />
+                    {(kitchen as any).imageSrc ? (
+                      <img src={(kitchen as any).imageSrc} alt={kitchen.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    ) : (
+                      <VideoPlayer src={(kitchen as any).videoSrc} />
+                    )}
                     <div className="absolute top-4 right-4 bg-red-600/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1 border border-red-500 uppercase tracking-wide">
                       <Flame className="w-3.5 h-3.5" /> Solo 1 Rimasta
                     </div>
