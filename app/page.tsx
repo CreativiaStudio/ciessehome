@@ -81,6 +81,7 @@ export default function Home() {
     phone: "",
     kitchenId: "",
     notes: "",
+    wantsCatalog: false,
     privacyAccepted: false
   });
   const [submitted, setSubmitted] = useState(false);
@@ -128,6 +129,7 @@ export default function Home() {
           },
           custom_data: {
             kitchen_id: formData.kitchenId,
+            wants_catalog: formData.wantsCatalog,
             notes: formData.notes,
             utm_source: new URLSearchParams(window.location.search).get('utm_source') || "",
             utm_medium: new URLSearchParams(window.location.search).get('utm_medium') || "",
@@ -166,7 +168,7 @@ export default function Home() {
               href="#contact"
               className="hidden sm:inline-flex bg-[#ad9271] text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-[#967d5f] transition-colors"
             >
-              Ricevi il Catalogo
+              Richiedi Info
             </a>
             
             {/* Mobile Menu Button */}
@@ -208,7 +210,7 @@ export default function Home() {
               className="bg-[#ad9271] text-white px-4 py-3 rounded-lg text-center font-bold hover:bg-[#967d5f] transition-colors mt-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Ricevi il Catalogo
+              Richiedi Informazioni
             </a>
           </div>
         )}
@@ -256,7 +258,7 @@ export default function Home() {
                     href="#contact"
                     className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-lg text-[#0e1f2b] bg-[#ad9271] hover:bg-[#967d5f] hover:text-white transition-colors shadow-md hover:shadow-lg"
                   >
-                    Richiedi Catalogo su WhatsApp
+                    Blocca l'Extra 10% Ora
                   </a>
                 </div>
               </motion.div>
@@ -514,9 +516,9 @@ export default function Home() {
                   </>
                 ) : (
                   <>
-                    <h3 className="text-2xl sm:text-3xl font-bold font-serif text-[#ad9271]">Ricevi il Catalogo su WhatsApp e Sblocca i Bonus</h3>
+                    <h3 className="text-2xl sm:text-3xl font-bold font-serif text-[#ad9271]">Richiedi Informazioni e Sblocca i Bonus</h3>
                     <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
-                      Compilare il modulo <strong className="text-white bg-white/10 px-1 rounded">non ti vincola all&apos;acquisto</strong>. Riceverai a breve il <strong>Catalogo in PDF su WhatsApp</strong> e avrai automaticamente bloccato l&apos;<strong>Extra 10% di sconto</strong> e il <strong>Trasporto Gratuito</strong> se deciderai di venirci a trovare.
+                      Compilare il modulo <strong className="text-white bg-white/10 px-1 rounded">non ti vincola all&apos;acquisto</strong>. Un nostro consulente ti invierà tutte le informazioni su WhatsApp e avrai automaticamente bloccato l&apos;<strong>Extra 10% di sconto</strong> e il <strong>Trasporto Gratuito</strong> se deciderai di venirci a trovare.
                     </p>
                   </>
                 )}
@@ -528,7 +530,7 @@ export default function Home() {
                       <Send className="w-8 h-8" />
                     </div>
                     <h4 className="text-xl font-bold text-slate-900">Ottima Scelta! Richiesta Inviata.</h4>
-                    <p className="mt-2 text-slate-600">Riceverai a brevissimo un messaggio WhatsApp da Lello con il link per sfogliare il Catalogo delle Offerte.</p>
+                    <p className="mt-2 text-slate-600">Riceverai a brevissimo un messaggio WhatsApp da Lello con tutte le informazioni.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -618,6 +620,19 @@ export default function Home() {
                       <label className="flex items-start gap-3 cursor-pointer p-2 hover:bg-slate-50 rounded-lg transition-colors border border-transparent hover:border-slate-100">
                         <input
                           type="checkbox"
+                          checked={formData.wantsCatalog}
+                          onChange={(e) => setFormData({ ...formData, wantsCatalog: e.target.checked })}
+                          className="mt-0.5 w-5 h-5 text-[#ad9271] focus:ring-[#ad9271] border-slate-300 rounded cursor-pointer accent-[#ad9271]"
+                        />
+                        <span className="text-sm text-slate-600 leading-snug font-semibold mt-0.5">
+                          Voglio ricevere anche il Catalogo Cucine in PDF su WhatsApp
+                        </span>
+                      </label>
+                    </div>
+                    <div>
+                      <label className="flex items-start gap-3 cursor-pointer p-2 hover:bg-slate-50 rounded-lg transition-colors border border-transparent hover:border-slate-100">
+                        <input
+                          type="checkbox"
                           required
                           checked={formData.privacyAccepted}
                           onChange={(e) => setFormData({ ...formData, privacyAccepted: e.target.checked })}
@@ -632,7 +647,7 @@ export default function Home() {
                       type="submit"
                       className="w-full bg-[#ad9271] hover:bg-[#967d5f] text-white font-bold py-4 px-6 rounded-lg shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2 cursor-pointer text-lg uppercase tracking-wide mt-2"
                     >
-                      {formData.kitchenId ? "Ricevi Dettagli su WhatsApp" : "Voglio il Catalogo su WhatsApp"}
+                      {formData.kitchenId ? "Richiedi Info su WhatsApp" : "Richiedi Info e Blocca lo Sconto"}
                     </button>
                   </form>
                 )}
@@ -646,7 +661,7 @@ export default function Home() {
       <div className="fixed bottom-0 left-0 w-full bg-[#ad9271] text-[#0e1f2b] py-3 px-4 z-50 shadow-[0_-4px_15px_rgba(0,0,0,0.15)] flex md:hidden justify-between items-center border-t border-white/20">
         <p className="text-xs sm:text-sm font-bold truncate">🎁 Blocca il modello: Extra -10% e Trasporto!</p>
         <a href="#contact" className="shrink-0 bg-[#0e1f2b] text-white text-xs sm:text-sm px-4 py-2 rounded-lg font-bold hover:bg-slate-800 transition-colors shadow-md">
-          Ricevi Catalogo
+          Richiedi Info
         </a>
       </div>
 
