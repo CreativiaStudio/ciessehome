@@ -17,5 +17,5 @@ body {
 }
 
 @utility animate-gradient {
-  animation: gradientMove 4s ease-in-out infinite;
+  animation: gradientMove 8s ease-in-out infinite;
 }
