@@ -458,7 +458,7 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1 h-[400px] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
                 <iframe 
-                  src="https://maps.google.com/maps?q=Ciesse%20Cucine%20S.r.l.%20Nocera%20Inferiore&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                  src="https://maps.google.com/maps?q=Ciesse%20Home%20Nocera%20Inferiore&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
