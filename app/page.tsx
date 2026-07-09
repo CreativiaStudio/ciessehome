@@ -673,8 +673,8 @@ export default function Home() {
                           onChange={(e) => setFormData({ ...formData, privacyAccepted: e.target.checked })}
                           className="mt-0.5 w-5 h-5 text-[#ad9271] focus:ring-[#ad9271] border-slate-300 rounded cursor-pointer accent-[#ad9271]"
                         />
-                        <span className="text-sm text-slate-600 leading-snug">
-                          Ho letto e accetto la <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-[#ad9271] font-semibold hover:underline">Privacy Policy</a>. Acconsento al trattamento dei miei dati personali per gestire la richiesta.
+                        <span className="text-xs sm:text-sm text-slate-600 leading-snug whitespace-nowrap overflow-hidden text-ellipsis">
+                          Accetto la <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-[#ad9271] font-semibold hover:underline">Privacy Policy</a> e il trattamento dei dati.
                         </span>
                       </label>
                     </div>
