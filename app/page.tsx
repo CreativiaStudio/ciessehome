@@ -165,7 +165,7 @@ export default function Home() {
               href="#contact"
               className="hidden sm:inline-flex bg-[#ad9271] text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-[#967d5f] transition-colors"
             >
-              Sblocca il Bonus
+              Ricevi il Catalogo
             </a>
             
             {/* Mobile Menu Button */}
@@ -207,7 +207,7 @@ export default function Home() {
               className="bg-[#ad9271] text-white px-4 py-3 rounded-lg text-center font-bold hover:bg-[#967d5f] transition-colors mt-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Sblocca il Bonus
+              Ricevi il Catalogo
             </a>
           </div>
         )}
@@ -255,7 +255,7 @@ export default function Home() {
                     href="#contact"
                     className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-lg text-[#0e1f2b] bg-[#ad9271] hover:bg-[#967d5f] hover:text-white transition-colors shadow-md hover:shadow-lg"
                   >
-                    Blocca Bonus e Modello
+                    Richiedi Catalogo su WhatsApp
                   </a>
                 </div>
               </motion.div>
@@ -361,7 +361,7 @@ export default function Home() {
                         onClick={() => setFormData({ ...formData, kitchenId: kitchen.name })}
                         className="text-xs sm:text-sm font-bold text-white bg-[#0e1f2b] hover:bg-[#ad9271] px-4 py-2.5 rounded-lg transition-colors shadow-md"
                       >
-                        Blocca Offerta
+                        Ricevi Info su WhatsApp
                       </a>
                     </div>
                   </div>
@@ -377,9 +377,9 @@ export default function Home() {
           <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-white/20">
               <div className="bg-[#0e1f2b] py-8 px-8 text-white border-b-4 border-[#ad9271]">
-                <h3 className="text-2xl sm:text-3xl font-bold font-serif text-[#ad9271]">Prenota una Visita e Sblocca i Bonus</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold font-serif text-[#ad9271]">Ricevi il Catalogo su WhatsApp e Sblocca i Bonus</h3>
                 <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
-                  Compilare il modulo <strong className="text-white bg-white/10 px-1 rounded">non ti vincola all&apos;acquisto</strong>. Serve solo a <strong>bloccare la cucina scelta per 48h</strong> (evitando che altri la comprino) e a garantirti il <strong>Trasporto Gratuito</strong> e l&apos;<strong>Extra 10% di sconto</strong> sul prezzo finale.
+                  Compilare il modulo <strong className="text-white bg-white/10 px-1 rounded">non ti vincola all&apos;acquisto</strong>. Riceverai a breve il <strong>Catalogo in PDF su WhatsApp</strong> e avrai automaticamente bloccato l&apos;<strong>Extra 10% di sconto</strong> e il <strong>Trasporto Gratuito</strong> se deciderai di venirci a trovare.
                 </p>
               </div>
               <div className="p-8">
@@ -388,8 +388,8 @@ export default function Home() {
                     <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Send className="w-8 h-8" />
                     </div>
-                    <h4 className="text-xl font-bold text-slate-900">Richiesta Inviata con Successo!</h4>
-                    <p className="mt-2 text-slate-600">Grazie per l&apos;interesse. Un consulente Ciesse Home ti contatterà al più presto per confermare l&apos;appuntamento.</p>
+                    <h4 className="text-xl font-bold text-slate-900">Ottima Scelta! Richiesta Inviata.</h4>
+                    <p className="mt-2 text-slate-600">Riceverai a brevissimo un messaggio WhatsApp da Lello con il link per sfogliare il Catalogo delle Offerte.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -493,7 +493,7 @@ export default function Home() {
                       type="submit"
                       className="w-full bg-[#ad9271] hover:bg-[#967d5f] text-white font-bold py-4 px-6 rounded-lg shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2 cursor-pointer text-lg uppercase tracking-wide mt-2"
                     >
-                      Blocca i Regali e la Cucina
+                      Voglio il Catalogo su WhatsApp
                     </button>
                   </form>
                 )}
@@ -507,7 +507,7 @@ export default function Home() {
       <div className="fixed bottom-0 left-0 w-full bg-[#ad9271] text-[#0e1f2b] py-3 px-4 z-50 shadow-[0_-4px_15px_rgba(0,0,0,0.15)] flex md:hidden justify-between items-center border-t border-white/20">
         <p className="text-xs sm:text-sm font-bold truncate">🎁 Blocca il modello: Extra -10% e Trasporto!</p>
         <a href="#contact" className="shrink-0 bg-[#0e1f2b] text-white text-xs sm:text-sm px-4 py-2 rounded-lg font-bold hover:bg-slate-800 transition-colors shadow-md">
-          Sblocca Bonus
+          Ricevi Catalogo
         </a>
       </div>
 
