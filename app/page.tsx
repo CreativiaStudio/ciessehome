@@ -361,7 +361,7 @@ export default function Home() {
                         onClick={() => setFormData({ ...formData, kitchenId: kitchen.name })}
                         className="text-xs sm:text-sm font-bold text-white bg-[#0e1f2b] hover:bg-[#ad9271] px-4 py-2.5 rounded-lg transition-colors shadow-md"
                       >
-                        Ricevi Info su WhatsApp
+                        Ricevi il Catalogo
                       </a>
                     </div>
                   </div>
