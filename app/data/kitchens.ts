@@ -1,5 +1,18 @@
 export const kitchens = [
   {
+    id: "civetta-1",
+    name: "Composizione Lineare Start",
+    category: "Cucine",
+    features: [
+      "Adattamento sartoriale (Moduli riposizionabili)",
+      "Cerniere ammortizzate Made in Italy",
+      "Elettrodomestici base inclusi",
+      "Possibilità di sostituzione Top su misura"
+    ],
+    price: 1800,
+    imageSrc: "/Immagini/civetta-1.jpg"
+  },
+  {
     id: "camera-contemporanea",
     name: "Camera contemporanea colore bianco",
     category: "Zona Notte",
@@ -61,6 +74,19 @@ export const kitchens = [
     videoSrc: "/videos/laura.mp4",
   },
   {
+    id: "civetta-2",
+    name: "Modello Base Elegance",
+    category: "Cucine",
+    features: [
+      "Finiture premium antimpronta",
+      "Cassetti ad estrazione totale",
+      "Predisposizione colonna forno e microonde",
+      "Struttura garantita dal produttore"
+    ],
+    price: 2400,
+    imageSrc: "/Immagini/civetta-2.jpg"
+  },
+  {
     id: "luisa-legno-fenix",
     name: "Modello Luisa con ante in legno e Fenix",
     category: "Cucine",
@@ -116,6 +142,19 @@ export const kitchens = [
     ],
     price: 8900,
     videoSrc: "/videos/tosca-castagno.mp4",
+  },
+  {
+    id: "civetta-3",
+    name: "Composizione Angolare Smart",
+    category: "Cucine",
+    features: [
+      "Ottimizzazione salvaspazio compatta",
+      "Materiali idrorepellenti di alta qualità",
+      "Flessibilità di personalizzazione post-vendita",
+      "Consulenza tecnica per adattamento"
+    ],
+    price: 2800,
+    imageSrc: "/Immagini/civetta-3.jpg"
   },
   {
     id: "tosca-decape",
@@ -213,44 +252,5 @@ export const kitchens = [
     ],
     price: 9900,
     videoSrc: "/videos/moda-castagno.mp4",
-  },
-  {
-    id: "civetta-1",
-    name: "Composizione Lineare Start",
-    category: "Cucine",
-    features: [
-      "Adattamento sartoriale (Moduli riposizionabili)",
-      "Cerniere ammortizzate Made in Italy",
-      "Elettrodomestici base inclusi",
-      "Possibilità di sostituzione Top su misura"
-    ],
-    price: 1800,
-    imageSrc: "/Immagini/civetta-1.jpg"
-  },
-  {
-    id: "civetta-2",
-    name: "Modello Base Elegance",
-    category: "Cucine",
-    features: [
-      "Finiture premium antimpronta",
-      "Cassetti ad estrazione totale",
-      "Predisposizione colonna forno e microonde",
-      "Struttura garantita dal produttore"
-    ],
-    price: 2400,
-    imageSrc: "/Immagini/civetta-2.jpg"
-  },
-  {
-    id: "civetta-3",
-    name: "Composizione Angolare Smart",
-    category: "Cucine",
-    features: [
-      "Ottimizzazione salvaspazio compatta",
-      "Materiali idrorepellenti di alta qualità",
-      "Flessibilità di personalizzazione post-vendita",
-      "Consulenza tecnica per adattamento"
-    ],
-    price: 2800,
-    imageSrc: "/Immagini/civetta-3.jpg"
   }
 ];
