@@ -138,29 +138,24 @@ export default function Home() {
       });
     }
 
-    // 2. Invia al Webhook di N8N (Server-Side Meta CAPI)
+    // 2. Invia al Master Webhook di N8N (Smistamento e CAPI Server-Side)
     try {
-      await fetch("https://n8n.creativiastudio.com/webhook/47ff0a28-48b5-427e-8173-5e932468dfb3", {
+      await fetch("https://n8n.creativiastudio.com/webhook/master-creativia-os", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          event_name: "Lead",
-          event_id: eventId,
-          event_time: Math.floor(Date.now() / 1000),
-          event_source_url: window.location.href,
-          user_data: {
-            fn: formData.firstName,
-            ln: formData.lastName,
-            em: formData.email,
-            ph: formData.phone
-          },
-          custom_data: {
+          client_id: "50f8c61e-e6dd-43e8-8aa5-79e639b4c2ea", // Ciesse Home ID
+          event: "lead",
+          timestamp: new Date().toISOString(),
+          url: window.location.href,
+          user_agent: window.navigator.userAgent,
+          data: {
+            email: formData.email,
+            phone: formData.phone,
+            first_name: formData.firstName,
+            last_name: formData.lastName,
             kitchen_id: formData.kitchenId,
-            wants_catalog: formData.wantsCatalog,
-            notes: formData.notes,
-            utm_source: new URLSearchParams(window.location.search).get('utm_source') || "",
-            utm_medium: new URLSearchParams(window.location.search).get('utm_medium') || "",
-            utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || "Nessuna / Organico"
+            notes: formData.notes
           }
         })
       });

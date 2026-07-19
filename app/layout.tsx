@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 import Script from "next/script";
+import { CreativiaTracker } from "../components/Tracker";
 
 export const metadata: Metadata = {
   title: "Ciesse Home | Rinnovo Showroom",
@@ -53,6 +54,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
+        <CreativiaTracker />
         {children}
       </body>
     </html>
